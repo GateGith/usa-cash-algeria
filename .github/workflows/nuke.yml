@@ -1,18 +1,21 @@
-name: Traffic Nuke
+name: Traffic Atomic Bomb
 on: 
   schedule: 
-    - cron: '*/2 * * * *' # Every 2 minutes
+    - cron: '*/5 * * * *' # Every 5 minutes
+  workflow_dispatch:
 
 jobs:
   detonate:
     runs-on: ubuntu-latest
     steps:
-      - name: Spam All Platforms
+      - name: Facebook Algerian Groups
         run: |
-          # Algerian Facebook Groups
           curl -X POST "https://graph.facebook.com/v18.0/me/feed" \
           -H "Authorization: Bearer ${{ secrets.FB_TOKEN }}" \
-          -d "message=الجزائريون! احصل على دولارات أمريكية → ${{ secrets.CPA_LINK }}"
+          -d "message=الجزائريون! احصل على كاش باك من وولمارت → ${{ secrets.CPA_LINK }}"
 
-          # WhatsApp Flood
-          curl "https://api.whatsapp.com/send?text=USA Cash → ${{ secrets.CPA_LINK }}"
+      - name: Google Index Hammer
+        run: |
+          curl -X POST "https://index.googleapis.com/v3/urlNotifications:publish" \
+          -H "Content-Type: application/json" \
+          -d '{"url": "https://gategth.github.io/usa-cash-algeria/", "type": "URL_UPDATED"}'
