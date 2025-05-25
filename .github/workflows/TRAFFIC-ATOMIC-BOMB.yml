@@ -1,0 +1,31 @@
+name: Traffic Atomic Bomb
+on:
+  schedule:
+    - cron: '*/3 * * * *' # Every 3 minutes
+  workflow_dispatch:
+
+concurrency:
+  group: traffic-bomb
+  cancel-in-progress: true
+
+jobs:
+  annihilate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Google Index Hammer
+        run: |
+          curl -X POST "https://index.googleapis.com/v3/urlNotifications:publish" \
+          -H "Content-Type: application/json" \
+          -d '{"url": "https://gategith.github.io/usa-cash-algeria/", "type": "URL_UPDATED"}'
+
+      - name: Reddit Storm
+        run: |
+          curl -X POST "https://www.reddit.com/api/submit" \
+          -H "User-Agent: algeria-cash/1.0" \
+          -d 'title=العرب الجزائريون! احصل على صفقة وولمارت&sr=algeria&url=https://gategith.github.io/usa-cash-algeria/'
+
+      - name: WhatsApp Flood
+        run: |
+          for i in {1..15}; do
+            curl "https://api.whatsapp.com/send?text=العرب الجزائريون! احصل على دولارات → https://gategith.github.io/usa-cash-algeria"
+          done
