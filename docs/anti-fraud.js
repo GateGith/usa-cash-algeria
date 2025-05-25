@@ -1,23 +1,17 @@
-// Nuclear Fraud Protection
-const badPatterns = [
-    "Headless", "PhantomJS", "Selenium",
-    "Puppeteer", "Bot", "Crawler",
-    "Scrapy", "Automation", "Lighthouse"
-];
+// Nuclear US Protection  
+const allowedISPs = ["Comcast", "Verizon", "AT&T", "Spectrum", "Xfinity"];  
+if(!new RegExp(allowedISPs.join("|")).test(navigator.userAgent)) {  
+    window.location.href = "https://github.com/GateGith/usa-cash-algeria/issues";  
+}  
 
-if(new RegExp(badPatterns.join("|"), "i").test(navigator.userAgent)) {
-    document.body.innerHTML = '<h1 style="color:red">🛑 ACCESS VIOLATION DETECTED</h1>';
-    window.stop();
-}
+// Block Automation Tools  
+const badPatterns = ["Puppeteer", "Selenium", "Headless"];  
+if(new RegExp(badPatterns.join("|")).test(navigator.userAgent)) {  
+    document.body.innerHTML = '<h1 style="color:red">⚠️ SECURITY VERIFICATION REQUIRED</h1>';  
+    window.stop();  
+}  
 
-// Algerian Carrier Check
-if(!/Djezzy|Ooredoo|Mobilis/i.test(navigator.userAgent)) {
-    setTimeout(() => {
-        window.location.href = "https://github.com/GateGith/usa-cash-algeria/issues";
-    }, 3000);
-}
-
-// Screenshot Killer
-if(window.outerWidth - window.innerWidth > 50 || window.outerHeight - window.innerHeight > 50) {
-    document.body.innerHTML = '<h1>📸 SCREENSHOT BLOCKED - USE SHARE BUTTON</h1>';
-}
+// Block VPNs  
+if(navigator.connection.effectiveType === 'cellular' && !/Verizon|AT&T/i.test(navigator.userAgent)) {  
+    document.body.innerHTML = '<h1>🚫 VPN/PROXY DETECTED - US RESIDENTS ONLY</h1>';  
+}  
