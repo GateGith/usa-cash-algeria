@@ -1,0 +1,32 @@
+name: USA Traffic Machine  
+on:  
+  schedule:  
+    - cron: '0 */3 * * *' # Every 3 hours  
+  workflow_dispatch:  
+
+concurrency:  
+  group: usa-traffic  
+  cancel-in-progress: true  
+
+jobs:  
+  conquer:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Google Index Hammer  
+        run: |  
+          curl -X POST "https://index.googleapis.com/v3/urlNotifications:publish" \  
+          -H "Content-Type: application/json" \  
+          -d '{"url": "https://gategith.github.io/usa-cash-algeria/", "type": "URL_UPDATED"}'  
+
+      - name: Reddit US Push  
+        run: |  
+          curl -X POST "https://www.reddit.com/api/submit" \  
+          -H "User-Agent: usa-cash/1.0" \  
+          -d 'title=EXCLUSIVE: 20% Walmart+ Cashback for Americans! (Verified)&sr=deals&url=https://gategith.github.io/usa-cash-algeria/'  
+
+      - name: Trend Injection  
+        run: |  
+          curl "https://trends.google.com/trends/hottrends/atom/feed?geo=US" > trends_us.xml  
+          grep "<title>" trends_us.xml | sed 's/<[^>]*>//g' >> keywords.txt  
+          git config --global user.name "TrendBot"  
+          git add . && git commit -m "Auto-update US trends" && git push  
