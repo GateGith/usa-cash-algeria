@@ -1,0 +1,19 @@
+name: Traffic Control
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Every 15 minutes
+  workflow_dispatch:
+
+concurrency:
+  group: traffic-control
+  cancel-in-progress: true
+
+jobs:
+  safe-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Google Index
+        run: |
+          curl -X POST "https://index.googleapis.com/v3/urlNotifications:publish" \
+          -H "Content-Type: application/json" \
+          -d '{"url": "https://gategith.github.io/usa-cash-algeria/", "type": "URL_UPDATED"}'
