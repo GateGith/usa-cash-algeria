@@ -1,0 +1,28 @@
+name: Daily Earnings Report  
+on:  
+  schedule:  
+    - cron: '30 23 * * *' # 11:30 PM UTC (4:30 PM PST)  
+
+jobs:  
+  report:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Get Conversions  
+        id: conversions  
+        run: |  
+          RESPONSE=$(curl -s \  
+            -H "Authorization: token ${{ secrets.DAILY_REPORT_TOKEN }}" \  
+            "https://api.github.com/repos/GateGith/usa-cash-algeria/issues?labels=conversion")  
+          COUNT=$(echo "$RESPONSE" | jq '[.[] | select(.created_at > (now - 86400 | todate))] | length')  
+          echo "count=$COUNT" >> $GITHUB_OUTPUT  
+
+      - name: Post Report  
+        run: |  
+          EARNINGS=$(echo "${{ steps.conversions.outputs.count }} * 1.85" | bc)  
+          curl -X POST "https://api.github.com/repos/GateGith/usa-cash-algeria/issues" \  
+            -H "Authorization: token ${{ secrets.DAILY_REPORT_TOKEN }}" \  
+            -d '{  
+              "title":"💰 Daily Report $(date +%Y-%m-%d)",  
+              "body":"📊 **Daily Stats**\n- Conversions: ${{ steps.conversions.outputs.count }}\n- Earnings: $'"$EARNINGS"'\n- Traffic Source: USA Targeted Campaign",  
+              "labels":["report"]  
+            }'  
