@@ -5,7 +5,7 @@ on:
   workflow_dispatch:  
 
 concurrency:  
-  group: autopilot  
+  group: usa-traffic  
   cancel-in-progress: true  
 
 jobs:  
